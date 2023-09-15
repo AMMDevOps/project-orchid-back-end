@@ -1,7 +1,7 @@
 export default {
     user: 'postgres',
     host: 'localhost',
-    database: 'project_tree_db',
-    password: 'alma',
+    database: 'project',
+    password: 'password',
     port: 5432,
 };
