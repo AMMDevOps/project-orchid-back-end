@@ -1,0 +1,24 @@
+# Node.js runtime files
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnpm-store/
+.pnpm-workspace.yaml
+.pnpm-debug.log
+pnpm-lock.yaml
+# Generated files
+dist/
+# IDE files
+.vscode/
+.idea/
+# Environment variables
+.env
+.env.local
+.env.*.local
+# TypeScript configuration
+tsconfig.tsbuildinfo
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+desktop.ini

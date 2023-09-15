@@ -1,16 +1,23 @@
-import express, { Express, Request, Response, Application } from 'express';
-import dotenv from 'dotenv';
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
 
-//For env File 
-dotenv.config();
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
 
-const app: Application = express();
-const port = process.env.PORT || 8000;
+// Express kezelő útvonalak itt
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to Express & TypeScript Server');
+io.on('connection', (socket) => {
+    console.log('Felhasználó csatlakozott');
+
+    socket.on('disconnect', () => {
+        console.log('Felhasználó lecsatlakozott');
+    });
 });
 
-app.listen(port, () => {
-    console.log(`Server is Fire at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+    console.log(`A szerver fut a ${PORT} porton`);
 });
